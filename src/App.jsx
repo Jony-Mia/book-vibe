@@ -3,7 +3,7 @@ import { useState } from 'react'
 import heroImg from '@/assets/hero_img.jpg'
 import '@/App.css'
 import { Outlet } from 'react-router'
-import Navbar from './Navbar'
+import Navbar from '@/component/Navbar'
 
 function App() {
 
@@ -11,7 +11,9 @@ function App() {
     <>
       <Navbar />
       
-      <Outlet />
+      <div className="container px-4">
+        <Outlet />
+      </div>
     </>
   )
 }
