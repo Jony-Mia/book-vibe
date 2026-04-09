@@ -4,25 +4,25 @@ import '@/index.css'
 import App from '@/App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
 import Home from '@/component/Home'
-import About from '@/component/About'
-import Blog from '@/component/Blog'
+import ListBook from '@/component/ListBook'
+import Book from '@/component/Book'
 import User from './component/User.jsx'
 import { UserData } from './API/api.js'
-import Form from './Form.jsx'
+import Form from './Form.jsx';
+
 const router = createBrowserRouter([
   {
     path: "/",
     Component: App,
     children: [
       { index: true, element: <Home/> },
-
       {
         path: "/listed",
-        element: <About/>
+        element: <ListBook/>
       },
       {
         path: "read",
-        element: <Blog/>
+        element: <Book/>
       },
       {
         path: "/user/:id",
@@ -37,7 +37,6 @@ const router = createBrowserRouter([
 ])
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    
     <RouterProvider router={router} ></RouterProvider>
   </StrictMode>,
 )

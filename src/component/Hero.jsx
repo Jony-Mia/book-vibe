@@ -1,22 +1,19 @@
 import React from 'react';
+import heroBookImg from '@/assets/pngwing.png'
+import { useNavigate } from 'react-router';
 
 const Hero = () => {
+    let listNavigate = useNavigate()
     return (
-        <div className='flex' >
-            <div className="hero m-auto bg-base-200 min-h-screen">
-                <div className="hero-content flex-col lg:flex-row-reverse">
-                    <img
-                        src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
-                        className="max-w-sm rounded-lg shadow-2xl"
-                    />
-                    <div>
-                        <h1 className="text-5xl font-bold">Box Office News!</h1>
-                        <p className="py-6">
-                            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                            quasi. In deleniti eaque aut repudiandae et a id nisi.
-                        </p>
-                        <button className="btn btn-primary">Get Started</button>
-                    </div>
+        <div className='' >
+            <div className='flex justify-around bg-base-300 p-10 rounded-2xl items-center'>
+                <div>
+                    <p className='capitalize text-6xl font-bold leading-18'>Books to freshen up <br/> your bookshelf</p>
+                    <br />
+                    <button onClick={()=>listNavigate('/listed')} className='btn btn-lg bg-green-500 rounded-[10px] text-white px-6 py-5 font-mono'>View The List</button>
+                </div>
+                <div>
+                    <img width={330} src={heroBookImg} alt="" />
                 </div>
             </div>
         </div>
