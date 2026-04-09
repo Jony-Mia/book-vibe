@@ -1,6 +1,6 @@
 import React, { createContext, Suspense } from 'react';
-import Hero from './Hero';
-import Book from './Book';
+import Hero from '../component/Hero';
+import Book from '../component/Book';
 // let bookData = "Jony Mia";
 import { AssetsContext } from '../context/AssetsContext';
 import { ProductsAPI } from '../context/AssetsContext';

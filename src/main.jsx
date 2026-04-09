@@ -1,14 +1,16 @@
-import { StrictMode } from 'react'
+import { StrictMode, use } from 'react'
 import { createRoot } from 'react-dom/client'
 import '@/index.css'
 import App from '@/App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router'
-import Home from '@/component/Home'
+import Home from '@/page/Home'
 import ListBook from '@/component/ListBook'
 import Book from '@/component/Book'
 import User from './component/User.jsx'
 import { UserData } from './API/api.js'
 import Form from './Form.jsx';
+import { ProductsAPI } from './context/AssetsContext.jsx'
+import BookDetails from './component/BookDetails.jsx'
 
 const router = createBrowserRouter([
   {
@@ -25,11 +27,15 @@ const router = createBrowserRouter([
         element: 'read boo from here'
       },
       {
-        path: "/user/:id",
-        element: <User/>,
+        path: "/book/:bookId",
+        element: <BookDetails/>,
         loader: async ({params})=>{
-         let res = UserData(params.id)
-          return res
+         let data = await fetch('/booksData.json');
+         let res = await data.json();
+         let id = Number(params.bookId);
+         let details = res.find(d => d.bookId === id) ;
+         
+          return details;
         }
       }
     ]
