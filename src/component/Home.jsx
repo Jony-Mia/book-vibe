@@ -8,7 +8,7 @@ import { ProductsAPI } from '../context/AssetsContext';
 const Home = () => {
     let datas = ProductsAPI()
     return (
-        <div>
+        <div className='font-inter'>
 
             <Hero />
             <Suspense fallback={<p>Loading.....</p>}>
