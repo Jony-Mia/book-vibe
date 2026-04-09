@@ -4,13 +4,11 @@ import { AssetsContext } from '../context/AssetsContext';
 
 const Book = () => {
     const bookDataList = use(AssetsContext);
-    const bookData = use(bookDataList);
-    console.log(bookData);
-    
+    const bookData     = use(bookDataList);
     return (
         <div className='mt-5'>
             <h1 className='text-center font-bold text-4xl '>Books</h1>
-        <div className='grid grid-cols-4 gap-3'>
+        <div className='grid grid-cols-5 items-center gap-3'>
                 {
                 bookData.map(data=><Products
                     key={data.bookId}

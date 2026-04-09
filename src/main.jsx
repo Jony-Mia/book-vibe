@@ -22,7 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "read",
-        element: <Book/>
+        element: 'read boo from here'
       },
       {
         path: "/user/:id",
