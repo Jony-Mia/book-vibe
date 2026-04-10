@@ -2,10 +2,10 @@ import React, { use } from 'react';
 import { AssetsContext } from '../context/AssetsContext';
 import { useNavigate } from 'react-router';
 
-
 const Book = () => {
     const bookDataList = use(AssetsContext);
     const bookData = use(bookDataList);
+
     return (
         <div className='mt-15'>
             <h1 className='text-center font-bold my-3 text-4xl '>Books</h1>
@@ -22,10 +22,11 @@ const Book = () => {
                         category={data.category}
                         ratings={data.rating}
                         tags={data.tags}
-                        publisher={data.publisher} yearOfPublishing={data.yearOfPublishing} />)
+                        publisher={data.publisher}
+                        yearOfPublishing={data.yearOfPublishing}
+
+                    />)
                 }
-                
-                
             </div>
 
         </div>
@@ -37,7 +38,7 @@ export let Products = ({ id, name, autor, image, review, category, totalPages, r
     return (
         <>
             <div>
-                <div role='button' tabIndex={0} onClick={()=>navigate(`/book/${id}`)} className="card bg-base-100 p-2 shadow-sm">
+                <div role='button' tabIndex={0} onClick={() => navigate(`/book/${id}`)} className="card bg-base-100 p-2 shadow-sm">
                     <figure className='bg-base-200 p-4 h-55 rounded-2xl'>
                         <img width={100} src={image} />
                     </figure>
