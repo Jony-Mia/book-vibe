@@ -59,8 +59,8 @@ const ListBook = () => {
                                 yearOfPublishing
                             } = data;
                             return (
-                                <div key={bookId} className="card my-6 card-side bg-base-100 shadow">
-                                    <figure className='h-70 p-5 w-50 bg-base-200'>
+                                <div key={bookId} className="card my-6 md:card-side bg-base-100 shadow">
+                                    <figure className='h-70 p-5 md:w-50 bg-base-200'>
                                         <img src={image} alt="Movie" />
                                     </figure>
                                     <div className="card-body flex justify-between flex-col">
@@ -107,8 +107,7 @@ const ListBook = () => {
                 <input type="radio" name="my_tabs_3" className="tab" aria-label="Wishlist" />
 
                 <div className="tab-content bg-base-100 border-base-300 p-6">
-                 
-                        {
+                    {wish.length===0? "You are not added any wish":
                             wish.map((datas) => {
                                 const {
                                     tags,
@@ -124,8 +123,8 @@ const ListBook = () => {
                                     yearOfPublishing
                                 } = datas;
                                 return (
-                                    <div key={bookId} className="card my-6 card-side bg-base-100 shadow">
-                                        <figure className='h-70 p-5 w-50 bg-base-200'>
+                                    <div key={bookId} className="card my-6 md:card-side bg-base-100 shadow">
+                                        <figure className='h-70 p-5 md:w-50 bg-base-200'>
                                             <img src={image} alt="Movie" />
                                         </figure>
                                         <div className="card-body flex justify-between flex-col">

@@ -35,12 +35,12 @@ const BookDetails = () => {
         }
     }
     return (
-        <div>
+        <div className='p-3'>
             <ToastContainer />
             <button onClick={()=>nav(-1)} className='mt-5 btn rounded-2xl'>
                 <span className='fa fa-arrow-left'></span>
             </button>
-            <div className='grid grid-cols-2 py-10 container gap-5'>
+            <div className='grid md:grid-cols-2 sm:grid-cols-1 grid-cols-1  py-10 container gap-5'>
                 <div className='p-3 bg-base-200  '>
                     <img width={380} src={image} className='m-auto ' alt="" />
                 </div>
