@@ -24,7 +24,6 @@ const Book = () => {
                         tags={data.tags}
                         publisher={data.publisher}
                         yearOfPublishing={data.yearOfPublishing}
-
                     />)
                 }
             </div>

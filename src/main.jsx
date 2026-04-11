@@ -8,7 +8,8 @@ import ListBook from '@/component/ListBook'
 import { AssetsContext } from '@/context/AssetsContext.jsx'
 import { ProductsAPI } from '@/context/AssetsContext.jsx'
 import BookDetails from '@/component/BookDetails.jsx'
-import WishContext from './context/Wish'
+import WishContext from '@/context/Wish'
+import TinyBarChart from '@/component/TinyBarChart'
 
 const data = ProductsAPI();
 const router = createBrowserRouter([
@@ -22,8 +23,8 @@ const router = createBrowserRouter([
         element: <ListBook />
       },
       {
-        path: "read",
-        element: 'read boo from here'
+        path: "/read",
+        element: <TinyBarChart/>
       },
       {
         path: "/book/:bookId",
@@ -46,7 +47,7 @@ createRoot(document.getElementById('root')).render(
     <Suspense fallback={<span className='loading loading-spinner'></span>}>
       <AssetsContext value={data}>
         <WishContext >
-          <RouterProvider  router={router} ></RouterProvider>
+          <RouterProvider router={router} ></RouterProvider>
         </WishContext>
       </AssetsContext>
     </Suspense>

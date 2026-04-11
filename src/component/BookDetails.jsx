@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
-import { useLoaderData } from 'react-router';
+import { useLoaderData, useNavigate } from 'react-router';
 import { toast, ToastContainer } from 'react-toastify';
 import WishContext, { WishList } from '../context/Wish';
 
 const BookDetails = () => {
+    let nav= useNavigate()
     let { wish, setWish } = useContext(WishList)
     let {
         tags,
@@ -24,13 +25,22 @@ const BookDetails = () => {
 
 
     const addToWish = () => {
-        setWish(data);
+        
+        let removeDuplicate = wish.find(dup=>dup.bookId===bookId)
+        if (removeDuplicate) {
+            return
+        }else{
+        setWish([...wish,data]);
         notification();
+        }
     }
     return (
         <div>
             <ToastContainer />
-            <div className='grid grid-cols-2 py-10 container items-center gap-5'>
+            <button onClick={()=>nav(-1)} className='mt-5 btn rounded-2xl'>
+                <span className='fa fa-arrow-left'></span>
+            </button>
+            <div className='grid grid-cols-2 py-10 container gap-5'>
                 <div className='p-3 bg-base-200  '>
                     <img width={380} src={image} className='m-auto ' alt="" />
                 </div>

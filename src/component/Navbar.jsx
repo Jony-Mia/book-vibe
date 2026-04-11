@@ -12,7 +12,7 @@ const Navbar = () => {
                     <ul className="menu space-x-3 menu-horizontal px-1">
                         <li><NavLink to='/' className='btn btn-ghost hover:bg-white rounded-xl'>Home</NavLink></li>
                         <li><NavLink to='/listed' className='btn btn-ghost hover:bg-white rounded-xl'>Listed Book</NavLink></li>
-                        <li><NavLink to='read' className='btn btn-ghost hover:bg-white rounded-xl'>Read Book</NavLink></li>
+                        {/* <li><NavLink to='read' className='btn btn-ghost hover:bg-white rounded-xl'>Read Book</NavLink></li> */}
                     </ul>
                 </div>
                 <div className="navbar-end space-x-2">
